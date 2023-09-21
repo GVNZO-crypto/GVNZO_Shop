@@ -18,9 +18,19 @@ class Product(models.Model):
     def __str__(self):
         return self.title  # Метод, который возвращает строковое представление объекта Product
 
+# Кортеж для вариантов выбора рейтинга в модели Review
+STARS = (
+    (1, '1 star'),
+    (2, '2 stars'),
+    (3, '3 stars'),
+    (4, '4 stars'),
+    (5, '5 stars'),
+)
+
 # Модель Review (Отзыв)
 class Review(models.Model):
     text = models.TextField()  # Поле для текста отзыва
+    stars = models.IntegerField( default=5, choices=STARS)  # Поле для выбора рейтинга
     product = models.ForeignKey(Product, on_delete=models.CASCADE)  # Внешний ключ для связи с моделью Product
 
     def __str__(self):
