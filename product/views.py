@@ -13,7 +13,6 @@ def category_list_api_view(request):
     data = CategorySerializer(categories, many=True).data
     return Response(data, status=status.HTTP_200_OK)
 
-
 # Вывод одной категории по идентификатору
 @api_view(['GET'])
 def category_detail_api_view(request, pk):
