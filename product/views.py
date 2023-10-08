@@ -6,6 +6,7 @@ from rest_framework import status
 from .models import Category, Product, Review
 from .serializers import CategorySerializer, ProductSerializer, ReviewSerializer
 
+
 # Вывод списка категорий
 @api_view(['GET', 'POST'])
 def category_list_api_view(request):

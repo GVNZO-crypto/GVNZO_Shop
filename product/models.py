@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Модель Category (Категория)
@@ -35,3 +36,10 @@ class Review(models.Model):
 
     def __str__(self):
         return self.text  # Метод, который возвращает строковое представление объекта Review
+
+# Модель Tag 
+class Tag(models.Model):
+    name = models.CharField(max_length=255, unique=True)  # Поле для имени тега
+
+    def __str__(self):
+        return self.name  # Метод, который возвращает строковое представление объекта Tag
